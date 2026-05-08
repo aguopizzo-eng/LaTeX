@@ -42,3 +42,38 @@ Este es un ejemplo de cómo estructurar un documento básico.
 LaTeX facilita la organización mediante secciones y subsecciones automáticas.
 
 \end{document}
+
+
+Estructura y Configuración
+\documentclass{...}: Define la clase del documento (como article, report o book), lo que controla el diseño general.
+\usepackage{...}: Carga paquetes externos para añadir funciones especiales, como graphicx para imágenes o amsmath para matemáticas avanzadas.
+\begin{document} y \end{document}: Delimitan el cuerpo del documento; todo lo que esté fuera de estas etiquetas no se mostrará en el PDF.
+\tableofcontents: Genera automáticamente el índice del documento basándose en las secciones creadas.
+Información del Título (Preámbulo)
+\title{...}, \author{...} y \date{...}: Definen los metadatos del documento.
+\thanks{...}: Añade una nota al pie (como un agradecimiento) dentro del comando de autor.
+\maketitle: Comando necesario dentro del cuerpo del documento para que el título, autor y fecha aparezcan realmente en el PDF.
+Formato de Texto y Comentarios
+\textbf{...}: Aplica negrita al texto.
+\textit{...}: Aplica cursiva.
+\underline{...}: Subraya el texto.
+\emph{...}: Enfatiza el texto (generalmente en cursiva, pero su comportamiento varía según el contexto).
+%: Se utiliza para añadir comentarios en el código; todo lo que siga a este símbolo en la misma línea no será procesado por LaTeX.
+\\ o \newline: Inserta un salto de línea manual sin comenzar un nuevo párrafo.
+Organización del Contenido
+\section{...}, \subsection{...}, \subsubsection{...}: Crean divisiones jerárquicas numeradas automáticamente.
+\section*{...}: Crea una sección sin numerar.
+\chapter{...} y \part{...}: Comandos de organización disponibles únicamente en las clases report y book.
+Elementos Visuales y Referencias
+\includegraphics{...}: Inserta una imagen en el documento (requiere el paquete graphicx).
+\caption{...}: Añade un título descriptivo a una imagen (figura) o tabla.
+\label{...} y \ref{...}: Permiten etiquetar un elemento y referenciarlo numéricamente en cualquier otra parte del texto.
+Listas y Tablas
+itemize: Entorno para crear listas con viñetas (no numeradas).
+enumerate: Entorno para crear listas numeradas.
+\item: Indica el inicio de un nuevo elemento dentro de una lista.
+tabular: Entorno para crear tablas, donde se usa & para separar columnas y \\ para terminar filas.
+\hline: Dibuja una línea horizontal dentro de una tabla.
+Matemáticas
+$ ... $ o \( ... \): Activa el modo matemático en línea (dentro de un párrafo).
+\[ ... \] o el entorno equation: Activa el modo matemático en pantalla para ecuaciones que ocupan su propia línea.
