@@ -1,29 +1,101 @@
 # LaTeX
+# 📘 LaTeX
+
 LaTeX es una herramienta para la composición de documentos de aspecto profesional que funciona mediante comandos de texto plano, permitiéndote enfocarte en el contenido mientras el sistema se encarga de la apariencia visual.
 
-1. Definición de la Clase del Documento:
-Todo documento de LaTeX debe comenzar declarando su clase, la cual controla el diseño general. Para documentos estándar, se utiliza la clase article.
+---
+
+# 📦 Definición de la Clase del Documento
+
+Todo documento de LaTeX debe comenzar declarando su clase, la cual controla el diseño general.
+
+Para documentos estándar, se utiliza la clase `article`.
+
+```latex
 \documentclass{article}
+```
 
-2. El Preámbulo y la Configuración del Título:
-El preámbulo es la sección de configuración que aparece antes del inicio del cuerpo del documento. Aquí se define la información que aparecerá en el título:
-\title{...}: Título del documento.
-\author{...}: Nombre del autor.
-\date{...}: Fecha manual o el comando \today para usar la fecha actual de compilación.
+---
 
-3. Cuerpo del Documento:
-El contenido visible se escribe dentro del entorno del cuerpo, delimitado por las etiquetas \begin{document} y \end{document}. Para que el título configurado en el preámbulo aparezca en el PDF, se debe insertar el comando \maketitle al inicio del cuerpo.
+# ⚙️ El Preámbulo y la Configuración del Título
 
-4. Estructura de Secciones:
-Para organizar el contenido de manera jerárquica, LaTeX ofrece comandos de seccionamiento que se numeran de forma automática:
-\section{...}: Sección principal.
-\subsection{...}: Subdivisión de una sección.
-\subsubsection{...}: División adicional de una subsección.
-Nota: Si deseas una sección sin numeración, puedes usar la versión con asterisco: \section*{Nombre}.
+El preámbulo es la sección de configuración que aparece antes del inicio del cuerpo del documento.
 
---------------------------------------------------------------------------------
-Ejemplo Completo de Código:
-Puedes usar este código como base para tu primer archivo .tex:
+Aquí se define la información que aparecerá en el título:
+
+- `\title{...}` → Título del documento.
+- `\author{...}` → Nombre del autor.
+- `\date{...}` → Fecha manual o `\today` para usar la fecha actual.
+
+```latex
+\title{Mi Documento}
+\author{Juan Pérez}
+\date{\today}
+```
+
+---
+
+# 📄 Cuerpo del Documento
+
+El contenido visible se escribe dentro del entorno delimitado por:
+
+```latex
+\begin{document}
+...
+\end{document}
+```
+
+Para que el título aparezca en el PDF, debes usar:
+
+```latex
+\maketitle
+```
+
+Ejemplo:
+
+```latex
+\begin{document}
+
+\maketitle
+
+Contenido del documento.
+
+\end{document}
+```
+
+---
+
+# 🗂️ Estructura de Secciones
+
+LaTeX organiza el contenido automáticamente mediante comandos jerárquicos.
+
+| Comando | Función |
+|---|---|
+| `\section{...}` | Sección principal |
+| `\subsection{...}` | Subsección |
+| `\subsubsection{...}` | Subdivisión adicional |
+
+Ejemplo:
+
+```latex
+\section{Introducción}
+
+\subsection{Antecedentes}
+
+\subsubsection{Historia}
+```
+
+Si deseas una sección sin numeración:
+
+```latex
+\section*{Conclusión}
+```
+
+---
+
+# 🧩 Ejemplo Completo de Código
+
+```latex
 \documentclass{article}
 
 % --- Preámbulo ---
@@ -42,38 +114,269 @@ Este es un ejemplo de cómo estructurar un documento básico.
 LaTeX facilita la organización mediante secciones y subsecciones automáticas.
 
 \end{document}
+```
 
+---
 
-Estructura y Configuración
-\documentclass{...}: Define la clase del documento (como article, report o book), lo que controla el diseño general.
-\usepackage{...}: Carga paquetes externos para añadir funciones especiales, como graphicx para imágenes o amsmath para matemáticas avanzadas.
-\begin{document} y \end{document}: Delimitan el cuerpo del documento; todo lo que esté fuera de estas etiquetas no se mostrará en el PDF.
-\tableofcontents: Genera automáticamente el índice del documento basándose en las secciones creadas.
-Información del Título (Preámbulo)
-\title{...}, \author{...} y \date{...}: Definen los metadatos del documento.
-\thanks{...}: Añade una nota al pie (como un agradecimiento) dentro del comando de autor.
-\maketitle: Comando necesario dentro del cuerpo del documento para que el título, autor y fecha aparezcan realmente en el PDF.
-Formato de Texto y Comentarios
-\textbf{...}: Aplica negrita al texto.
-\textit{...}: Aplica cursiva.
-\underline{...}: Subraya el texto.
-\emph{...}: Enfatiza el texto (generalmente en cursiva, pero su comportamiento varía según el contexto).
-%: Se utiliza para añadir comentarios en el código; todo lo que siga a este símbolo en la misma línea no será procesado por LaTeX.
-\\ o \newline: Inserta un salto de línea manual sin comenzar un nuevo párrafo.
-Organización del Contenido
-\section{...}, \subsection{...}, \subsubsection{...}: Crean divisiones jerárquicas numeradas automáticamente.
-\section*{...}: Crea una sección sin numerar.
-\chapter{...} y \part{...}: Comandos de organización disponibles únicamente en las clases report y book.
-Elementos Visuales y Referencias
-\includegraphics{...}: Inserta una imagen en el documento (requiere el paquete graphicx).
-\caption{...}: Añade un título descriptivo a una imagen (figura) o tabla.
-\label{...} y \ref{...}: Permiten etiquetar un elemento y referenciarlo numéricamente en cualquier otra parte del texto.
-Listas y Tablas
-itemize: Entorno para crear listas con viñetas (no numeradas).
-enumerate: Entorno para crear listas numeradas.
-\item: Indica el inicio de un nuevo elemento dentro de una lista.
-tabular: Entorno para crear tablas, donde se usa & para separar columnas y \\ para terminar filas.
-\hline: Dibuja una línea horizontal dentro de una tabla.
-Matemáticas
-$ ... $ o \( ... \): Activa el modo matemático en línea (dentro de un párrafo).
-\[ ... \] o el entorno equation: Activa el modo matemático en pantalla para ecuaciones que ocupan su propia línea.
+# 🏗️ Estructura y Configuración
+
+## `\documentclass{...}`
+
+Define la clase del documento (`article`, `report`, `book`, etc.).
+
+```latex
+\documentclass{report}
+```
+
+---
+
+## `\usepackage{...}`
+
+Carga paquetes externos para añadir funcionalidades.
+
+```latex
+\usepackage{graphicx}
+\usepackage{amsmath}
+```
+
+Paquetes comunes:
+
+| Paquete | Función |
+|---|---|
+| `graphicx` | Insertar imágenes |
+| `amsmath` | Matemáticas avanzadas |
+| `geometry` | Configurar márgenes |
+| `babel` | Soporte para idiomas |
+
+---
+
+## `\begin{document}` y `\end{document}`
+
+Delimitan el contenido visible del documento.
+
+```latex
+\begin{document}
+
+Contenido
+
+\end{document}
+```
+
+---
+
+## `\tableofcontents`
+
+Genera automáticamente el índice.
+
+```latex
+\tableofcontents
+```
+
+---
+
+# 🏷️ Información del Título
+
+## `\title{...}`
+
+```latex
+\title{Mi Documento}
+```
+
+## `\author{...}`
+
+```latex
+\author{Juan Pérez}
+```
+
+## `\date{...}`
+
+```latex
+\date{\today}
+```
+
+## `\thanks{...}`
+
+Agrega notas al pie en el autor.
+
+```latex
+\author{Juan Pérez \thanks{Universidad UDE}}
+```
+
+## `\maketitle`
+
+Muestra título, autor y fecha.
+
+```latex
+\maketitle
+```
+
+---
+
+# ✍️ Formato de Texto y Comentarios
+
+| Comando | Función |
+|---|---|
+| `\textbf{...}` | Negrita |
+| `\textit{...}` | Cursiva |
+| `\underline{...}` | Subrayado |
+| `\emph{...}` | Énfasis |
+| `%` | Comentarios |
+
+Ejemplos:
+
+```latex
+\textbf{Texto en negrita}
+
+\textit{Texto en cursiva}
+
+\underline{Texto subrayado}
+
+% Esto es un comentario
+```
+
+Salto de línea:
+
+```latex
+Texto línea 1 \\
+Texto línea 2
+```
+
+o
+
+```latex
+Texto línea 1
+\newline
+Texto línea 2
+```
+
+---
+
+# 🧱 Organización del Contenido
+
+```latex
+\section{...}
+\subsection{...}
+\subsubsection{...}
+```
+
+Sección sin numeración:
+
+```latex
+\section*{Bibliografía}
+```
+
+Solo para `report` y `book`:
+
+```latex
+\chapter{Capítulo 1}
+
+\part{Parte I}
+```
+
+---
+
+# 🖼️ Elementos Visuales y Referencias
+
+## Insertar imágenes
+
+```latex
+\includegraphics{imagen.png}
+```
+
+(Requiere `graphicx`)
+
+---
+
+## Títulos para imágenes y tablas
+
+```latex
+\caption{Descripción de la imagen}
+```
+
+---
+
+## Etiquetas y referencias
+
+```latex
+\label{fig:ejemplo}
+
+\ref{fig:ejemplo}
+```
+
+---
+
+# 📋 Listas y Tablas
+
+## Lista con viñetas
+
+```latex
+\begin{itemize}
+\item Primer elemento
+\item Segundo elemento
+\end{itemize}
+```
+
+---
+
+## Lista numerada
+
+```latex
+\begin{enumerate}
+\item Paso uno
+\item Paso dos
+\end{enumerate}
+```
+
+---
+
+## Tablas
+
+```latex
+\begin{tabular}{|c|c|}
+\hline
+Nombre & Edad \\
+\hline
+Juan & 20 \\
+\hline
+\end{tabular}
+```
+
+| Símbolo | Función |
+|---|---|
+| `&` | Separar columnas |
+| `\\` | Terminar fila |
+| `\hline` | Línea horizontal |
+
+---
+
+# ➗ Matemáticas
+
+## Matemáticas en línea
+
+```latex
+$ a^2 + b^2 = c^2 $
+```
+
+o
+
+```latex
+\( a^2 + b^2 = c^2 \)
+```
+
+---
+
+## Matemáticas en bloque
+
+```latex
+\[
+a^2 + b^2 = c^2
+\]
+```
+
+o
+
+```latex
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
+```l modo matemático en pantalla para ecuaciones que ocupan su propia línea.
