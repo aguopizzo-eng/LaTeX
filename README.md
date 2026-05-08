@@ -1,5 +1,4 @@
 # LaTeX
-Guía Básica: Creación de Documentos en LaTeX
 LaTeX es una herramienta para la composición de documentos de aspecto profesional que funciona mediante comandos de texto plano, permitiéndote enfocarte en el contenido mientras el sistema se encarga de la apariencia visual.
 
 1. Definición de la Clase del Documento
